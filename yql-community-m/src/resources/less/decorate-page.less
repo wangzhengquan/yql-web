@@ -1,0 +1,34 @@
+@import url('./share.less');
+.decorate-page {
+    .page-content{
+        background: #383c3d;
+    }
+}
+.decorate-wall{
+    padding: 15px;
+
+
+}
+.component{
+    background: #fff;
+	margin-bottom: 15px;
+	position: relative;
+    line-height: 0;
+    &.text{
+        text-align: justify;
+        line-height: 1.6;
+    }
+}
+
+.decorate-button{
+    line-height: 0;
+	display: block;
+	position: absolute;
+    left: 50%;
+    top: 50%;
+    padding: 20px 15px;
+    .translate3d(-50%, -50%, 0);
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 13500;
+    border-radius: 5px;
+}

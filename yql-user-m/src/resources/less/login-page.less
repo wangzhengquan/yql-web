@@ -1,0 +1,108 @@
+@import url('./share.less');
+
+.login-page{
+	.page-content{
+
+		
+	}
+	.login-navbar{
+		padding: 0 15px;
+		margin-top: 30px;
+		box-sizing: border-box;
+	    .flexbox();
+	    .justify-content(space-between);
+	    .align-items(center);
+	    .title{
+	    	a{
+	    		color: @themeColor;
+	    		font-size: 16px;
+	    	}
+	    }
+	    a{
+    		color: #666;
+    		font-size: 14px;
+    	}
+	}
+
+	.regist-form, .login-form{
+		padding: 0 15px;
+		margin-top: 30px;
+		ul {
+			list-style: none;
+			li{
+				margin-top: 10px;
+				&:first-child{
+					margin-top: 0;
+				}
+			}
+
+			margin-bottom: 30px;
+		}
+		
+		.item-input{
+
+			position: relative;
+			border: 1px solid #e6e6e6;
+			&.has-right-btn {
+				input{
+					padding-right: 70px;
+				}
+				.btn-verify-code{
+					position: absolute;
+					box-sizing: border-box;
+					background: #dedcd9;
+					color: #b5b5b9;
+					right: 0;
+					top: 0;
+					height: 40px;
+					width: 70px;
+					z-index: 10;
+					border:none;
+
+				}
+			}
+				
+		}
+		input{
+			box-sizing: border-box;
+			width: 100%;
+			display: block;
+			height: 40px;
+			font-size: 16px;
+			padding-left: 5px;
+		}
+
+		.button{
+			
+		    border: 1px solid #0bb908;
+		    background: #0bb908;
+		    color: #fff;
+		    text-decoration: none;
+		    text-align: center;
+		    display: block;
+		    border-radius: 5px;
+		    line-height: 40px;
+		    box-sizing: border-box;
+		    height: 40px;
+		    padding: 0 10px;
+		    margin: 0;
+		    white-space: nowrap;
+		    position: relative;
+		    overflow: hidden;
+		    font-size: 16px;
+		    cursor: pointer;
+		    outline: 0;
+		}
+
+		.button-fill{
+			width: 100%;
+		}
+	}
+
+	.section-tip{
+		font-size: 14px;
+		padding: 0 15px;
+		margin-top: 10px;
+		color: #666;
+	}
+}

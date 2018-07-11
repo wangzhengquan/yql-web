@@ -1,0 +1,82 @@
+@import url('./share.less');
+@import url('./icon.less');
+@import url('./navbar.less');
+@import url('./toolbar.less');
+@import url('./buttons.less');
+*{
+  margin: 0;
+  padding: 0;
+}
+
+ul{
+	list-style-type: none;
+}
+/* Base Application Styles */
+
+
+.swiper-container{
+  background: #fff;
+   
+}
+
+.required-flag{
+	font-style: normal;
+	font-size: 18px;
+	color: @red;
+	&:after{
+		content: '*';
+	}
+}
+
+
+.label-left-field{
+	.flexbox();
+	padding: 15px 0;
+	& + .label-left-field{
+		padding-top:0;
+	}
+	
+	.label{
+		 color: #9b9b9b;
+	}
+	.field{
+		.fit(1);
+		.transition( 300ms);
+    	line-height: 1.5;
+    	white-space: normal;
+	}
+}
+
+.file-selector input[type=file] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 100;
+}
+
+
+
+.button[disabled], .button.disabled, .button.button-fill[disabled], .button.button-fill.disabled{
+	background-color: #b9b9b9;
+	opacity: .5;
+    cursor: pointer;
+}
+
+
+
+@media screen and (min-width:750px) {
+	body,html{width:750px;margin:0 auto;}
+}
+
+
+ 
+
+
+
+
+
+
+

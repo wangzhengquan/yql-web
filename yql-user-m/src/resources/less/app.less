@@ -1,0 +1,70 @@
+@import url('./share.less');
+@import url('./icon.less');
+@import url('./navbar.less');
+@import url('./toolbar.less');
+@import url('../../../node_modules/f7-react-ui/resources/less/utils.less');
+@import url('./item.less');
+@import url('./buttons.less');
+
+
+*{
+  margin: 0;
+  padding: 0;
+}
+/* Base Application Styles */
+ 
+
+.hairline-top{
+	position: relative;
+	.hairline(top, #c8c7cc) !important;
+}
+
+.hairline-bottom{
+	position: relative;
+	.hairline(bottom, #c8c7cc) !important;
+}
+.swiper-container{
+  background: #fff;
+   
+}
+
+.label-left-field{
+	.flexbox();
+	padding: 15px 0;
+	& + .label-left-field{
+		padding-top:0;
+	}
+	
+	.label{
+		 color: #9b9b9b;
+	}
+	.field{
+		.fit(1);
+		.transition( 300ms);
+    	line-height: 1.5;
+    	white-space: normal;
+	}
+}
+
+
+ 
+
+.content-none{
+	text-align: center;
+	font-size: 20px;
+	padding-top: 100px;
+	color: #999999;
+}
+ 
+
+@media screen and (min-width:750px) {
+	body,html{width:750px;margin:0 auto;}
+}
+
+
+
+
+
+
+
+

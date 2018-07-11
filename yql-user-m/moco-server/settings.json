@@ -1,0 +1,14 @@
+[
+    {
+    	
+    	"response" : {
+	      "headers" : {
+	      	
+	        "Access-Control-Allow-Origin" : "*"
+	      }
+	    },
+    	"context" : "/customer",
+        "include" : "router.json"
+    }
+     
+]

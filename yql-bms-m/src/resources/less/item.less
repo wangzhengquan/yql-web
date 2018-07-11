@@ -1,0 +1,91 @@
+@import url('./share.less');
+.item-content {
+    box-sizing: border-box;
+    padding-left: 15px;
+    min-height: 44px;
+    .flexbox();
+    .justify-content(space-between);
+    .align-items(center);
+
+    .item-inner {
+	    padding-right: 15px;
+	    position: relative;
+	    width: 100%;
+	    padding-top: 8px;
+	    padding-bottom: 7px;
+	    min-height: 44px;
+	    box-sizing: border-box;
+	    .flexbox();
+	    -webkit-box-flex:1;
+	    -ms-flex:1;
+	    overflow: hidden;
+	    .justify-content(space-between);
+	    .align-items(center);
+	    .align-self(stretch);
+	}
+	.item-title {
+	    .flex-shrink(1);
+	    min-width: 0;
+	    white-space: nowrap;
+	    position: relative;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    max-width: 100%;
+	}
+	.item-after {
+	    white-space: nowrap;
+	    color: #8e8e93;
+	    .flex-shrink(0);
+	    margin-left: 5px;
+	    .flexbox();
+	    max-height: 28px;
+	}
+
+}
+
+.item-link {
+    .transition(300ms);
+    display: block;
+    color: inherit;
+
+    .item-inner {
+        padding-right: 35px;
+        .encoded-svg-background("<svg viewBox='0 0 60 120' xmlns='http://www.w3.org/2000/svg'><path d='m60 61.5-38.25 38.25-9.75-9.75 29.25-28.5-29.25-28.5 9.75-9.75z' fill='#c7c7cc'/></svg>");
+        background-size: 10px 20px;
+        background-repeat: no-repeat;
+        background-position: 95% center;
+        background-position: -webkit-calc(~"100% - 15px") center;
+        background-position: calc(~"100% - 15px") center;
+    }
+     
+}
+
+.item-input {
+    width: 100%;
+    margin-top: -8px;
+    margin-bottom: -7px;
+    -webkit-box-flex:1;
+    -ms-flex:1;
+    .flex-shrink(1);
+
+    input[type="text"], input[type="password"], input[type="search"], input[type="email"], input[type="tel"], input[type="url"], input[type="date"], input[type="datetime-local"], input[type="time"], input[type="number"], select, textarea {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+        box-sizing: border-box;
+        border: none;
+        background: none;
+        border-radius: 0 0 0 0;
+        box-shadow: none;
+        display: block;
+        padding: 0px;
+        margin: 0;
+        width: 100%;
+        height: 43px;
+        color: #000;
+        font-size: 14px;
+        font-family: inherit;
+
+    }
+}

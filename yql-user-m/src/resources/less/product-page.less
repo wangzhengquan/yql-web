@@ -1,0 +1,134 @@
+@import url('./share.less');
+.product-page {
+	.list-block{
+		font-size: 15px;
+		margin: 15px 0;
+		.item-subtitle{
+		   font-size: 13px;
+		}
+	}
+
+	.item-address .item-after{
+		white-space: normal;
+	    .fit(1);
+	    max-height: none;
+	    text-align: justify;
+	}
+
+	.section{
+		position: relative;
+		background:#fff; 
+		margin-bottom: 10px;
+	}
+	.item{
+		padding: 0 15px;
+	}
+
+	.section-product{
+		position: relative;
+		.hairline(bottom, #c8c7cc);
+
+
+		
+		.title{
+			font-weight: bold;
+			padding:15px;
+			font-size:16px;
+			line-height: 1em;
+
+		}
+
+		.item-status{
+			padding: 0 15px 15px;
+		}
+
+		.sold-amount{
+			font-size:12px;
+			color:#deb889;
+			position: absolute;
+    	    right: 15px;
+    		margin-top: 17px;
+		}
+		.price{
+			color:#f85a94;
+			margin-right:10px;
+			text-align: justify;
+		}
+		.desc{
+			padding: 0px 15px 10px;
+			background-color:#fff;
+			border-bottom:1px solid #eeeded;
+			.spec-desc{
+				/*font-size:12px;*/
+				/*line-height:30px;*/
+			}
+			p{
+				margin: 0;
+				/*font-size:12px;*/
+				color:#6b6b6b;
+				text-align: justify;
+			}
+			img{
+				width:75px;
+				padding-bottom:10px;
+				margin-right:10px;
+			}
+		}
+		 
+	}
+
+	.item-community{
+		.avatar{
+			width: 60px;
+			height: 60px;
+			img{
+				width: 100%;
+				height: 100%;
+			}
+		}
+		.community-detail{
+			position: absolute;
+			top: 50%;
+			margin-left: 10px;
+			.translate3d(0, -50%, 0);
+		}
+	}
+	.page-content{
+		padding-bottom: 60px;
+	}
+	.toolbar{
+		height: 60px;
+		.button-enter{
+			width: 100%;
+			border: 1px solid @themeColor;
+			background: @themeColor;
+		    color: #fff;
+		    text-decoration: none;
+		    text-align: center;
+		    display: block;
+		    border-radius: 5px;
+		    line-height: 40px;
+		    box-sizing: border-box;
+		    -webkit-appearance: none;
+		    -moz-appearance: none;
+		    -ms-appearance: none;
+		    appearance: none;
+		    height: 40px;
+		    padding: 0 10px;
+		    margin: 0;
+		    white-space: nowrap;
+		    position: relative;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    font-size: 14px;
+		    font-family: inherit;
+		    cursor: pointer;
+		    outline: 0;
+		}
+	}
+}
+
+ 
+
+
+ 

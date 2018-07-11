@@ -1,0 +1,8 @@
+java -jar moco-runner-0.10.2-standalone.jar http -p 12306 -c test.json
+java -jar moco-runner-0.10.2-standalone.jar start -p 12306 -g settings.json
+java -jar moco-runner-0.10.2-standalone.jar start -p 12306 -g settings.json -e remote
+
+1. java -jar moco-runner-0.10.2-standalone.jar start -p 12306 -g settings.json
+
+
+2.  http://localhost:12306/customer/products

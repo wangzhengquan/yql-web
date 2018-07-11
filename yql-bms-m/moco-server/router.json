@@ -1,0 +1,5 @@
+[	
+	{ "request": { "uri": "/" }, "response": { "file": "index.html" } },
+	{ "request": { "uri": "/products" }, "response": { "file": "data/products.json" } },
+	{ "request": { "uri": "/products/01" }, "response": { "file": "data/product.json" } }
+]

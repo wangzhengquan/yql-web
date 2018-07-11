@@ -1,0 +1,29 @@
+
+.navbar{
+  // rgb(53, 52, 58)
+  background: #222426;
+
+  color: @white;
+  .center{
+    color: @white;
+  }  
+  .left{
+  	color: @white;
+  } 
+  a.link{
+  	color: @white;
+  }
+
+  a.link.ok {
+    color: @themeColor;
+    &.disabled, &[disabled]{
+      opacity: .5;
+    }
+  }
+  
+  &:after{
+    background-color:#222426;
+  }
+
+
+}
