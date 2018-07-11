@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import Navbar from 'react-ui/navbar'
 import Panels from 'react-ui/panels'
 import CategoriesPage from '../categories/CategoriesPage'
-import history from 'react-ui/history'
 class ProductsNavbar extends Navbar{
   	constructor(props) {
       super(props);
@@ -19,17 +18,7 @@ class ProductsNavbar extends Navbar{
       var onSelect = (category_id) => {
         Panels.closePanel(panel)
         location.href = history.createHref({ pathname: '/products', query: { category_id: category_id } })
-       // alert(history.createHref({ pathname: '/the/path', query: { the: 'query' } })) 
-       // history.createPath({ pathname: '/the/path', query: { the: 'query' } })
-       //  history.push({ pathname: '/the/path', query: { the: 'query' } })
-       //  history.push({
-        //   pathname: '/products',
-        //   search: '?category_id='+catId
-
-        //   // Extra location-specific state may be kept in session
-        //   // storage instead of in the URL query string!
-        //   // state: { the: 'state' }
-        // })
+        
 
       }
       ReactDOM.render(<CategoriesPage onSelect={onSelect} onClose={onClose}/>, panel)

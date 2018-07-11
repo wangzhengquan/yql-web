@@ -1,4 +1,3 @@
-require('normalize.css/normalize.css');
 // require('../resources/styles/App.css');
 
 import React from 'react';

@@ -1,4 +1,4 @@
-import Navbar from 'react-ui/navbar'
+import Navbar from '../Navbar'
 
 class ProductNavbar extends Navbar{
   

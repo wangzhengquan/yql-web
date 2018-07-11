@@ -1,3 +1,3 @@
-import config from './dist'
+import config from './dev'
 
 export default config

@@ -1,6 +1,6 @@
 import React  from 'react';
 import { connect } from 'react-redux'
-import Page from 'react-ui/page'
+import Page from '../Page'
 import ProductList from '../products/HScrollProductList'
 import LazyLoad from 'react-ui/lazy-load'
 import {fetchColumnsIfNeeded} from '../../actions/columns'

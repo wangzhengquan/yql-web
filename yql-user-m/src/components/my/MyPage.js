@@ -1,5 +1,5 @@
 import React  from 'react';
-import AnimationPage from 'react-ui/page'
+import AnimationPage from '../Page'
 import classNames from 'classnames';
 import { Link } from 'react-router'
 import Auth from '../../services/Auth'

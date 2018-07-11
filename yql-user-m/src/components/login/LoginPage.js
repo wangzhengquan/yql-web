@@ -1,5 +1,5 @@
 import React  from 'react';
-import Page from 'react-ui/page'
+import Page from '../Page'
 import {Link} from 'react-router'
 import classNames from 'classnames'
 import Auth from '../../services/Auth'

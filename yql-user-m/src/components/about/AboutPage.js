@@ -1,6 +1,6 @@
 import React  from 'react';
 import $ from 'react-ui/dom'
-import AnimationPage from 'react-ui/page'
+import AnimationPage from '../Page'
 import classNames from 'classnames';
 
 

@@ -4,7 +4,6 @@ import {Link} from 'react-router'
 import classNames from 'classNames'
 import Ajax from '../../ajax'
 import List from 'react-ui/lists'
-import history from 'react-ui/history'
 
 import VerificationCodeView from './VerificationCodeView'
 require('react-ui/resources/less/forms.less')

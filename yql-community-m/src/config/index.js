@@ -1,4 +1,4 @@
-import devConfig from './dist'
+import devConfig from './dev'
 
 let config = devConfig
 

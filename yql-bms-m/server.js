@@ -1,19 +1,18 @@
-/*eslint no-console:0 */
-'use strict';
-require('core-js/fn/object/assign');
+const express = require('express');
 const webpack = require('webpack');
-const WebpackDevServer = require('webpack-dev-server');
-const config = require('./webpack.config');
-const open = require('open');
- // const host = '192.168.0.100'
-// const host = 'localhost'
-console.log('config=======', config)
-new WebpackDevServer(webpack(config), config.devServer)
-.listen(config.port, config.host, (err) => {
-  if (err) {
-    console.log(err);
-  }
-  console.log('Listening at localhost:' + config.port);
-  console.log('Opening your system browser...');
-  open('http://'+config.host+':' + config.port + '/webpack-dev-server/');
+const webpackDevMiddleware = require('webpack-dev-middleware');
+
+const app = express();
+const config = require('./webpack.config.js');
+const compiler = webpack(config);
+
+// Tell express to use the webpack-dev-middleware and use the webpack.config.js
+// configuration file as a base.
+app.use(webpackDevMiddleware(compiler, {
+  publicPath: config.output.publicPath
+}));
+
+// Serve the files on port 3000.
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!\n');
 });

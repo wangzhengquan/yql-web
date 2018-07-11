@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactTransitionGroup from 'react/lib/ReactTransitionGroup'
+import ReactTransitionGroup from 'react-addons-transition-group'
 import ReactUI from 'react-ui/react-ui'
 import classNames from 'classnames';
 

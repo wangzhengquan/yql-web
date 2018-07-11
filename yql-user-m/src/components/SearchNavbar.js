@@ -4,7 +4,7 @@ import SearchBar from 'react-ui/searchbar'
 
 import Panels from 'react-ui/panels'
 import CategoriesPage from './categories/CategoriesPage'
-import history from 'react-ui/history'
+import history from './history'
 import SearchProductView from './widget/SearchProductView'
 require('../resources/less/searchbar.less')
 

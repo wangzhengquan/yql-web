@@ -1,34 +1,3 @@
-// import 'core-js/fn/object/assign';
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import { Router, Route,browserHistory,IndexRoute } from 'react-router'
-
-// import HomeView from './components/home/HomeView'
-// import SettingView from './components/tab/SettingView'
-// import AnimationView from './components/tab/AnimationView'
-// import App from './App';
-// require('react-ui/resources/less/intro.less');
-// require('react-ui/resources/less/icons.less');
-// require('react-ui/resources/less/views.less');
-// require('react-ui/resources/less/pages.less');
-// require('./resources/less/app.less')
-// require('react-ui/resources/less/react-ui.ios.colors.less')
-
-// // Render the main component into the dom
-// ReactDOM.render(
-//   <Router history={browserHistory}>
-//     <Route path="/" component={App}>
-//       /* add it here, as a child of `/` */
-//       <IndexRoute component={HomeView}/>
-//       /*no used*/ 
-//       <Route path="setting" component={SettingView}/>
-//       <Route path="anim" component={AnimationView}/>
-//     </Route>
-
-//   </Router>, document.getElementById('my-app'));
-
-
-import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router} from 'react-router'

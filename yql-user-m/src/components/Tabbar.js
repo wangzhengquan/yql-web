@@ -1,7 +1,7 @@
 import React  from 'react';
 import { Link, IndexLink } from 'react-router'
-import Navbar from 'react-ui/navbar'
-import Page from 'react-ui/page'
+import Navbar from './Navbar'
+import Page from './Page'
 let classNames = require('classnames');
 
 class Tabbar extends React.Component{

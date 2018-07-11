@@ -1,5 +1,5 @@
 import React  from 'react';
-import Page from 'react-ui/page'
+import Page from '../Page'
 import { connect } from 'react-redux'
 import ProductList from '../products/ProductList'
 import LazyLoad from 'react-ui/lazy-load'

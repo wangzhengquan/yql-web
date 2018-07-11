@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactTransitionGroup from 'react/lib/ReactTransitionGroup'
+import ReactTransitionGroup from 'react-addons-transition-group'
 import ReactUI from 'react-ui/react-ui'
 import classNames from 'classnames';
 
@@ -27,7 +27,7 @@ class View extends React.Component{
           {/*-----pages-------*/}
           <ReactTransitionGroup className={classNames('pages')} component="div">
             {React.cloneElement(page, {
-              className: classNames({'no-navbar': !navbar, 'navbar-through': !!navbar, 'toolbar-through': !!toolbar, 'tabbar-labels-through': !!toolbar}),
+              className: {'navbar-through': !!navbar, 'toolbar-through': !!toolbar, 'tabbar-labels-through': !!toolbar},
               key: (this.props.location ? this.props.location.pathname : ReactUI.guid() ),
               pageName: location.pathname==='/' ? 'index' : location.pathname.charAt(0) === '/' ? location.pathname.substring(1) : location.pathname
             })}

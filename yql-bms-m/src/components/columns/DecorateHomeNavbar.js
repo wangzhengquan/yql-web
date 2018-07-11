@@ -1,10 +1,6 @@
 import React  from 'react';
 import ReactDOM from 'react-dom';
 import Modals from 'react-ui/modals'
-import Panels from 'react-ui/panels'
-import history from 'react-ui/history'
-import Navbars from 'react-ui/navbars'
-import $ from 'react-ui/dom'
 import Navbar from '../Navbar'
 
 var CitySelectView = require('../widget/CitySelectView')

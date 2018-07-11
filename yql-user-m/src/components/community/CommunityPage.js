@@ -1,5 +1,5 @@
 import React  from 'react';
-import Page from 'react-ui/page'
+import Page from '../Page'
 import LazyLoad from 'react-ui/lazy-load'
 import Ajax from '../../ajax'
 import classNames from 'classnames'

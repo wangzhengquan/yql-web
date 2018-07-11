@@ -27,14 +27,18 @@ const rootRoute = {
           getComponents(nextState, cb) {
             
             Modals.showIndicator()
-            require.ensure(['./components/home/HomePage', './components/Tabbar'], (require) => {
+            Promise.all([
+              import('./components/home/HomeNavbar'),
+              import('./components/home/HomePage'),
+              import('./components/Tabbar')
               
+            ]).then( ([navbar, page, Tabbar]) => {
               cb(null, {
-                navbar: require('./components/home/HomeNavbar'),
-                page: require('./components/home/HomePage'),
-                toolbar: require('./components/Tabbar')
+                navbar: navbar,
+                page: page,
+                toolbar: Tabbar
               })
-              document.querySelector('title').innerHTML='好聚友'
+              document.querySelector('title').innerHTML='一起嗨'
               Modals.hideIndicator()
             })
           }
@@ -45,14 +49,19 @@ const rootRoute = {
           onEnter: breforeEnter,
           getComponents(nextState, cb) {
             Modals.showIndicator()
-            require.ensure([], (require) => {
-                cb(null, {
-                  navbar: hideNavbar ? undefined : require('./components/communities/CommunitiesNavbar'),
-                  page: require('./components/communities/CommunitiesPage'),
-                  toolbar: require('./components/Tabbar')
-                })
-                document.querySelector('title').innerHTML='社团'
-                Modals.hideIndicator()
+            Promise.all([
+              import('./components/communities/CommunitiesNavbar'),
+              import('./components/communities/CommunitiesPage'),
+              import('./components/Tabbar')
+              
+            ]).then( ([navbar, page, tabbar]) => {
+              cb(null, {
+                navbar:  hideNavbar ? undefined : navbar,
+                page: page,
+                toolbar: tabbar
+              })
+              document.querySelector('title').innerHTML='社团'
+              Modals.hideIndicator()
             })
           }
         }, {
@@ -60,10 +69,15 @@ const rootRoute = {
           onEnter: breforeEnter,
           getComponents(nextState, cb) {
             Modals.showIndicator()
-            require.ensure([], (require) => {
+            Promise.all([
+              import('./components/products/ProductsNavbar'),
+              import('./components/products/ProductsPage'),
+              import('./components/Tabbar')
+              
+            ]).then( ([navbar, page, tabbar]) => {
                 cb(null, {
-                  navbar: hideNavbar ? null : require('./components/products/ProductsNavbar'),
-                  page: require('./components/products/ProductsPage')
+                  navbar: hideNavbar ? null :navbar,
+                  page: page
                 })
                 document.querySelector('title').innerHTML='活动列表'
                 Modals.hideIndicator()
@@ -75,10 +89,15 @@ const rootRoute = {
           onEnter: breforeEnter,
           getComponents(nextState, cb) {
             Modals.showIndicator()
-            require.ensure([], (require) => {
+            Promise.all([
+              import('./components/community/CommunityNavbar'),
+              import('./components/community/CommunityPage'),
+              import('./components/Tabbar')
+              
+            ]).then( ([navbar, page, tabbar]) => {
                 cb(null, {
-                  navbar: hideNavbar ? null : require('./components/community/CommunityNavbar'),
-                  page: require('./components/community/CommunityPage')
+                  navbar: hideNavbar ? null : navbar,
+                  page: page
                 })
                 document.querySelector('title').innerHTML='社团详情'
                 Modals.hideIndicator()
@@ -90,11 +109,16 @@ const rootRoute = {
           onEnter: breforeEnter,
           getComponents(nextState, cb) {
             Modals.showIndicator()
-            require.ensure(['./components/login/LoginNavbar','./components/login/LoginPage'], (require) => {
+            Promise.all([
+              import('./components/login/LoginNavbar'),
+              import('./components/login/LoginPage'),
+              import('./components/Tabbar')
+              
+            ]).then( ([navbar, page, tabbar]) => {
               
               cb(null, {
-                navbar: hideNavbar ? null : require('./components/login/LoginNavbar'),
-                page: require('./components/login/LoginPage')
+                navbar: hideNavbar ? null : navbar,
+                page: page
               })
               document.querySelector('title').innerHTML='登录'
               Modals.hideIndicator()
@@ -105,10 +129,15 @@ const rootRoute = {
           onEnter: breforeEnter,
           getComponents(nextState, cb) {
             Modals.showIndicator()
-            require.ensure([], (require) => {
+            Promise.all([
+              import('./components/login/QuickLoginNavbar'),
+              import('./components/login/QuickLoginPage'),
+              import('./components/Tabbar')
+              
+            ]).then( ([navbar, page, tabbar]) => {
                 cb(null, {
-                  navbar: hideNavbar ? null : require('./components/login/QuickLoginNavbar'),
-                  page: require('./components/login/QuickLoginPage')
+                  navbar: hideNavbar ? null : navbar,
+                  page: page
                 })
                 document.querySelector('title').innerHTML='快捷登录'
                 Modals.hideIndicator()
@@ -119,10 +148,15 @@ const rootRoute = {
           onEnter: breforeEnter,
           getComponents(nextState, cb) {
             Modals.showIndicator()
-            require.ensure([], (require) => {
+            Promise.all([
+              import('./components/regist/RegistNavbar'),
+              import('./components/regist/RegistPage'),
+              import('./components/Tabbar')
+              
+            ]).then( ([navbar, page, tabbar]) => {
                 cb(null, {
-                  navbar: hideNavbar ? null : require('./components/regist/RegistNavbar'),
-                  page: require('./components/regist/RegistPage')
+                  navbar: hideNavbar ? null : navbar,
+                  page: page
                 })
                 document.querySelector('title').innerHTML='注册帐号'
                 Modals.hideIndicator()
@@ -133,10 +167,15 @@ const rootRoute = {
           onEnter: breforeEnter,
           getComponents(nextState, cb) {
             Modals.showIndicator()
-            require.ensure([], (require) => {
+            Promise.all([
+              import('./components/regist/RegistNavbar'),
+              import('./components/regist/RegistPage'),
+              import('./components/Tabbar')
+              
+            ]).then( ([navbar, page, tabbar]) => {
                 cb(null, {
-                  navbar: hideNavbar ? null : require('./components/regist/RegistNavbar'),
-                  page: require('./components/regist/RegistPage')
+                  navbar: hideNavbar ? null : navbar,
+                  page: page
                 })
                 document.querySelector('title').innerHTML='找回密码'
                 Modals.hideIndicator()
@@ -149,11 +188,16 @@ const rootRoute = {
             Modals.showIndicator()
             Auth.isCommunityLogged(function(logged){
               if(logged){
-                require.ensure([], (require) => {
+                Promise.all([
+                  import('./components/my/MyNavbar'),
+                  import('./components/my/MyPage'),
+                  import('./components/Tabbar')
+                  
+                ]).then( ([navbar, page, tabbar]) => {
                     cb(null, {
-                      navbar: hideNavbar ? null : require('./components/my/MyNavbar'),
-                      page: require('./components/my/MyPage'),
-                      toolbar: require('./components/Tabbar')
+                      navbar: hideNavbar ? null : navbar,
+                      page: page,
+                      toolbar: tabbar
                     })
                     document.querySelector('title').innerHTML='我的'
                     Modals.hideIndicator()
@@ -173,10 +217,15 @@ const rootRoute = {
             Modals.showIndicator()
             Auth.isLogged(function(logged){
               if(logged){
-                require.ensure([], (require) => {
+                Promise.all([
+                  import('./components/me/MeNavbar'),
+                  import('./components/me/MePage'),
+                  import('./components/Tabbar')
+                  
+                ]).then( ([navbar, page, tabbar]) => {
                     cb(null, {
-                      navbar: hideNavbar ? null : require('./components/me/MeNavbar'),
-                      page: require('./components/me/MePage')
+                      navbar: hideNavbar ? null : navbar,
+                      page: page
                     })
                     document.querySelector('title').innerHTML='个人信息'
                     Modals.hideIndicator()
@@ -197,10 +246,15 @@ const rootRoute = {
             Modals.showIndicator()
             Auth.isLogged(function(logged){
               if(logged){
-                require.ensure([], (require) => {
+                Promise.all([
+                  import('./components/orders/OrdersNavbar'),
+                  import('./components/orders/OrdersPage'),
+                  import('./components/Tabbar')
+                  
+                ]).then( ([navbar, page, tabbar]) => {
                     cb(null, {
-                      navbar: hideNavbar ? null : require('./components/orders/OrdersNavbar'),
-                      page: require('./components/orders/OrdersPage')
+                      navbar: hideNavbar ? null : navbar,
+                      page: page
                     })
                     document.querySelector('title').innerHTML='我报名的活动'
                     Modals.hideIndicator()
@@ -228,10 +282,15 @@ const rootRoute = {
                   window.sessionStorage.setItem('nextPath',  nextState.location.pathname+nextState.location.search)
                   history.replace('/type-apply-info')
                 } else {
-                  require.ensure([], (require) => {
+                  Promise.all([
+                    import('./components/order/OrderConfirmNavbar'),
+                    import('./components/order/OrderConfirmPage'),
+                    import('./components/Tabbar')
+                    
+                  ]).then( ([navbar, page, tabbar]) => {
                       cb(null, {
-                        navbar: hideNavbar ? null : require('./components/order/OrderConfirmNavbar'),
-                        page: require('./components/order/OrderConfirmPage')
+                        navbar: hideNavbar ? null : navbar,
+                        page: page
                       })
                       document.querySelector('title').innerHTML='报名确认'
                       Modals.hideIndicator()
@@ -255,10 +314,15 @@ const rootRoute = {
             Auth.isLogged(function(logged){
 
               if(logged){
-                require.ensure([], (require) => {
+                Promise.all([
+                  import('./components/order/OrderNavbar'),
+                  import('./components/order/OrderPage'),
+                  import('./components/Tabbar')
+                  
+                ]).then( ([navbar, page, tabbar]) => {
                     cb(null, {
-                      navbar: hideNavbar ? null : require('./components/order/OrderNavbar'),
-                      page: require('./components/order/OrderPage')
+                      navbar: hideNavbar ? null : navbar,
+                      page: page
                     })
                     document.querySelector('title').innerHTML='报名确认'
                     Modals.hideIndicator()
@@ -280,10 +344,15 @@ const rootRoute = {
             Modals.showIndicator()
             Auth.isLogged(function(logged){
               if(logged){
-                require.ensure([], (require) => {
+                Promise.all([
+                  import('./components/apply/TypeApplyInfoNavbar'),
+                  import('./components/apply/TypeApplyInfoPage'),
+                  import('./components/Tabbar')
+                  
+                ]).then( ([navbar, page, tabbar]) => {
                     cb(null, {
-                      navbar: hideNavbar ? null : require('./components/apply/TypeApplyInfoNavbar'),
-                      page: require('./components/apply/TypeApplyInfoPage')
+                      navbar: hideNavbar ? null : navbar,
+                      page: page
                     })
                     document.querySelector('title').innerHTML='填写报名信息'
                     Modals.hideIndicator()
@@ -302,10 +371,15 @@ const rootRoute = {
           onEnter: breforeEnter,
           getComponents(nextState, cb) {
             Modals.showIndicator()
-            require.ensure([], (require) => {
+            Promise.all([
+              import('./components/about/AboutNavbar'),
+              import('./components/about/AboutPage'),
+              import('./components/Tabbar')
+              
+            ]).then( ([navbar, page, tabbar]) => {
                 cb(null, {
-                  navbar: hideNavbar ? null : require('./components/about/AboutNavbar'),
-                  page: require('./components/about/AboutPage')
+                  navbar: hideNavbar ? null : navbar,
+                  page: page
                 })
                 document.querySelector('title').innerHTML='关于我们'
                 Modals.hideIndicator()
@@ -317,10 +391,15 @@ const rootRoute = {
           getComponent(nextState, cb) {
             Modals.showIndicator()
             //只为获取登录信息，无伦是否登录都可以进入该页面
-            require.ensure([], (require) => {
+            Promise.all([
+              import('./components/product/ProductNavbar'),
+              import('./components/product/ProductPage'),
+              import('./components/Tabbar')
+              
+            ]).then( ([navbar, page, tabbar]) => {
               cb(null, {
-                navbar: hideNavbar ? null : require('./components/product/ProductNavbar'),
-                page: require('./components/product/ProductPage')
+                navbar: hideNavbar ? null : navbar,
+                page: page
               })
               document.querySelector('title').innerHTML='活动详情'
               Modals.hideIndicator()
@@ -331,10 +410,15 @@ const rootRoute = {
           onEnter: breforeEnter,
           getComponents(nextState, cb) {
             Modals.showIndicator()
-            require.ensure([], (require) => {
+            Promise.all([
+              import('./components/test/TestNavbar'),
+              import('./components/test/TestPage'),
+              import('./components/Tabbar')
+              
+            ]).then( ([navbar, page, tabbar]) => {
                 cb(null, {
-                  navbar: hideNavbar ? null : require('./components/test/TestNavbar'),
-                  page: require('./components/test/TestPage')
+                  navbar: hideNavbar ? null : navbar,
+                  page: page
                 })
                 document.querySelector('title').innerHTML='Test'
                 Modals.hideIndicator()

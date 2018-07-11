@@ -1,6 +1,6 @@
 import React  from 'react';
 import {Link} from 'react-router'
-import AnimationPage from 'react-ui/page'
+import AnimationPage from '../Page'
 import classnames from 'classnames';
 import {List} from 'react-ui/lists'
 import Ajax from 'react-ui/ajax'

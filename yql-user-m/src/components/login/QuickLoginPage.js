@@ -1,5 +1,5 @@
 import React  from 'react';
-import Page from 'react-ui/page'
+import Page from '../Page'
 import classNames from 'classnames'
 require('../../resources/less/login-page.less')
 // require('react-ui/resources/less/lists.less');

@@ -17,7 +17,7 @@ class Tabbar extends React.Component{
 
   render(){
     return (
-   	<div className={classNames("toolbar tabbar tabbar-labels", {'toolbar-hidden': false})}>
+   	<div id="app-toolbar" className={classNames('toolbar tabbar tabbar-labels', {'toolbar-hidden': false})}>
 	  <div className="toolbar-inner tabbar tabbar-labels">
 	    <IndexLink to="/" className="tab-link" activeClassName="active" onClick={this.handleTabClick.bind(this)}>
 	      <i className="icon icon-home"></i>
@@ -25,13 +25,13 @@ class Tabbar extends React.Component{
 	    </IndexLink>
 
 	    <Link to="/communities" className="tab-link" activeClassName="active" onClick={this.handleTabClick.bind(this)}>
-	      <i className="icon icon-category"></i>
+	      <i className="icon icon-community"></i>
 	      <span className="tabbar-label">社团</span>
 	    </Link>
 
-	    <Link to="/me" className="tab-link" activeClassName="active" onClick={this.handleTabClick.bind(this)}>
-	      <i className="icon icon-category">
-	        <span className="badge theme-red">4</span>
+	    <Link to="/my" className="tab-link" activeClassName="active" onClick={this.handleTabClick.bind(this)}>
+	      <i className="icon icon-me">
+	        {/*<span className="badge theme-red">4</span>*/}
 	      </i>
 	      <span className="tabbar-label">我的</span>
 	    </Link>
